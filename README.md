@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# 📊 Budget Table - Sistema de Gestión de Presupuesto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Instalación y Configuración
 
-Currently, two official plugins are available:
+Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clonar el repositorio**:
+   ```bash
+   git clone [URL_DEL_REPOSITORIO]
+   cd budget-table
+   ```
 
-## Expanding the ESLint configuration
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Configurar variables de entorno** (si aplica):
+   ```bash
+   cp .env.example .env
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+4. **Iniciar la aplicación**:
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+
+5. **Abrir en el navegador**:
+   ```
+   http://localhost:5173
+   ```
+
+## 🛠 Tecnologías Utilizadas
+
+| Tecnología | Versión | Propósito |
+|------------|---------|-----------|
+| React | 18+ | Biblioteca principal para la interfaz de usuario |
+| TypeScript | 4.9+ | Tipado estático para mayor seguridad en el código |
+| Tailwind CSS | 3.3+ | Framework CSS para estilizado rápido y responsive |
+| ExcelJS | 4.3+ | Generación de archivos Excel desde los datos |
+| Vite | 4.0+ | Bundler y entorno de desarrollo rápido |
+| React Icons | 4.7+ | Biblioteca de iconos para la interfaz |
+
+## 💡 Funcionalidades Principales
+
+### 📋 Gestión de Partidas Presupuestarias
+- **Agregar/Editar filas** para diferentes conceptos de gasto
+- **Selección de categorías COG** desde un listado predefinido
+- **Distribución mensual** del presupuesto
+
+### 🔢 Cálculos Automáticos
+- **Total por fila**: Suma automática del presupuesto por concepto
+- **Total por mes**: Consolidado de todos los conceptos por mes
+- **Total general**: Suma total del presupuesto asignado
+
+### 📊 Exportación de Datos
+- **Generación de reportes en Excel** con un solo click
+- **Formato predefinido** listo para presentación
+- **Incluye totales** y formato condicional básico
+
+### 🎛️ Características Avanzadas
+- **Persistencia local**: Los datos se guardan automáticamente en el navegador
+- **Tooltips descriptivos**: Información adicional al pasar el mouse
+
+## 🏗️ Estructura del Proyecto
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+src/
+├── components/       # Componentes reutilizables
+│   └── BudgetTable/  # Componente principal
+│       ├── hooks/    # Custom hooks
+│       ├── reducers/ # Lógica de estado
+│       ├── types/    # Definiciones TypeScript
+│       └── utils/    # Funciones utilitarias
+├── pages/            # Vistas/páginas
+├── styles/           # Estilos globales
+└── types/            # Tipos globales
 ```
