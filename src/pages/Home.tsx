@@ -1,4 +1,4 @@
-import BudgetTable from "../components/BudgetTable";
+import BudgetTable from "../BudgetTable/components";
 
 const Home = () => {
   return (
