@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
 import { BudgetRow } from "./BudgetRow";
 import { useBudgetData } from "../hooks/useBudgetData";
 import { exportToExcel } from "../utils/utils";
 import { months } from "../constants/constants";
+import { useCallback } from "react";
 
 export default function BudgetTable() {
   const { data, addRow, handleChange, rowTotals, monthlyTotals, grandTotal } =
@@ -17,11 +17,11 @@ export default function BudgetTable() {
       <div className="p-4 overflow-auto bg-white p-5 container">
         <div className="flex justify-between items-center my-5">
           <div className="flex items-center gap-2 -center">
-            <img
+            {/* <img
               className="w-32 h-auto"
               src="../../../public/images/Imagen1.png"
               alt="H. CONGRESO DEL ESTADO DE CHIHUAHUA"
-            />
+            /> */}
             <h2 className="text-xl font-bold">
               H. CONGRESO DEL ESTADO DE CHIHUAHUA
             </h2>
