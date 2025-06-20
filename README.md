@@ -6,7 +6,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
+   git clone https://github.com/AlfredoGarciaYapor/buget-table.git
    cd budget-table
    ```
 
